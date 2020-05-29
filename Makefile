@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: marvin <marvin@student.42.fr>              +#+  +:+       +#+         #
+#    By: qblinky <qblinky@student.21-school.ru>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/05/10 13:19:32 by qblinky           #+#    #+#              #
-#    Updated: 2020/05/23 00:44:17 by marvin           ###   ########.fr        #
+#    Updated: 2020/05/27 00:54:14 by qblinky          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -63,35 +63,31 @@ OBJECTS = $(SRCS:.c=.o)
 
 BOBJECTS = $(BSRCS:.c=.o)
 
-FLAGS =	-Wall -Wextra -Werror
+CFLAGS=	-Wall -Wextra -Werror
 
-CC = gcc $(FLAGS)
+CC = gcc $(CFLAGS) -c
 
-all: makelib make srcs make bonus
+all: $(NAME)
 
-make srcs:
-	$(CC) -c $(CFLAGS) $(SRCS) -I.
+$(NAME):
+	@$(CC) $(SRCS)
+	@ar rc $(NAME) $(OBJECTS)
+	@ranlib $(NAME)
 
-make bonus:
-	$(CC) -c $(CFLAGS) $(BSRCS) -I.
+bonus:
+	@$(CC) $(BSRCS)
+	@ar rc $(NAME) $(BOBJECTS)
+	@ranlib $(NAME)
 
-makelib:
-	@ar rcs $(NAME) $(OBJECTS) $(BOBJECTS) $(HEADER)
-
-%.o: %.c $(HEADER)
-	@$(CC) $< -o $@ $(HEADER)
+%.o: %.c
+	@$(CC) $< -o $@
 
 clean:
-	@rm -f $(OBJECTS)
-	@rm -f $(BOBJECTS)
+	@rm -f $(OBJECTS) $(BOBJECTS)
 
 fclean: clean
-	@rm -f all
+	@rm -f $(NAME)
 
 re: fclean all
-
-norme:
-	norminette $(SRCS)
-	norminette $(BSRCS)
 
 .PHONY: all clean fclean re

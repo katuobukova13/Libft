@@ -3,23 +3,23 @@
 /*                                                        :::      ::::::::   */
 /*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: qblinky <qblinky@student.42.fr>            +#+  +:+       +#+        */
+/*   By: qblinky <qblinky@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/05/14 23:51:39 by qblinky           #+#    #+#             */
-/*   Updated: 2020/05/14 23:51:39 by qblinky          ###   ########.fr       */
+/*   Created: 2020/05/23 21:51:04 by qblinky           #+#    #+#             */
+/*   Updated: 2020/05/27 10:45:39 by qblinky          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t			strlen_n(unsigned int nb)
+static size_t	strlen_n(unsigned int nb)
 {
-	if (nb >= 10)
+	if (nb > 9)
 		return (1 + strlen_n(nb / 10));
 	return (1);
 }
 
-char	*ft_itoa(int n)
+char			*ft_itoa(int n)
 {
 	char			*s;
 	size_t			len;
@@ -30,7 +30,7 @@ char	*ft_itoa(int n)
 	nb = (n < 0) ? -n : n;
 	len = strlen_n(nb) + sign;
 	s = (char *)malloc(sizeof(char) * len + 1);
-	if (!s)
+	if (s == NULL)
 		return (NULL);
 	s[len] = '\0';
 	while (len-- > (size_t)sign)

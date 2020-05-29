@@ -1,21 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_ascii.c                                         :+:      :+:    :+:   */
+/*   ft_isascii.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: qblinky <qblinky@student.42.fr>            +#+  +:+       +#+        */
+/*   By: qblinky <qblinky@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/05/09 02:11:12 by qblinky           #+#    #+#             */
-/*   Updated: 2020/05/09 02:11:12 by qblinky          ###   ########.fr       */
+/*   Created: 2020/05/23 21:43:43 by qblinky           #+#    #+#             */
+/*   Updated: 2020/05/26 15:04:06 by qblinky          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int ft_isascii(int c)
+int	ft_isascii(int c)
 {
 	if (c >= 0 && c <= 127)
-		return 1;
-	else
-		return 0;
+		return (1);
+	return (0);
 }

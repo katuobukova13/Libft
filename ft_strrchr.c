@@ -3,19 +3,19 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: qblinky <qblinky@student.42.fr>            +#+  +:+       +#+        */
+/*   By: qblinky <qblinky@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/05/08 02:10:53 by qblinky           #+#    #+#             */
-/*   Updated: 2020/05/08 02:10:53 by qblinky          ###   ########.fr       */
+/*   Created: 2020/05/24 01:48:32 by qblinky           #+#    #+#             */
+/*   Updated: 2020/05/24 01:49:03 by qblinky          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char *ft_strrchr(const char *s, int c)
+char	*ft_strrchr(const char *s, int c)
 {
-	int i;
-	char *ss;
+	int		i;
+	char	*ss;
 
 	ss = (char *)s;
 	i = ft_strlen(ss);

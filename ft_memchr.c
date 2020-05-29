@@ -3,19 +3,19 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: qblinky <marvin@student.42.fr>             +#+  +:+       +#+        */
+/*   By: qblinky <qblinky@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/05/05 22:17:49 by qblinky           #+#    #+#             */
-/*   Updated: 2020/05/05 22:17:49 by qblinky          ###   ########.fr       */
+/*   Created: 2020/05/23 22:11:20 by qblinky           #+#    #+#             */
+/*   Updated: 2020/05/26 15:02:02 by qblinky          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void *ft_memchr (const void *s, int c, size_t n)
+void	*ft_memchr(const void *s, int c, size_t n)
 {
-	unsigned char *ss;
-	size_t i;
+	unsigned char	*ss;
+	size_t			i;
 
 	ss = (unsigned char *)s;
 	i = 0;
@@ -25,5 +25,5 @@ void *ft_memchr (const void *s, int c, size_t n)
 			return ((void *)&ss[i]);
 		i++;
 	}
-	return NULL;
+	return (NULL);
 }
